@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div id="authenticate" class="main">
+      <h1>Login</h1>
+      <form action="/" method="post">
+        <label for="authEmail"> Email: </label>
+        <input
+          type="email"
+          id="authEmail"
+          name="email"
+          placeholder="Enter your Email"
+          value="<%- locals.email %>"
+          required
+        />
+        <div class="errorMessage" <% if (!noEmail) { %>
+          hidden<% } %>><%- noEmail %>
+        </div>
+
+        <label for="authPassword"> Password: </label>
+        <input
+          type="password"
+          id="authPassword"
+          name="password"
+          placeholder="Enter your Password"
+          required
+        />
+        <div class="errorMessage" <% if (!wrongPsw) { %>
+          hidden<% } %>><%- wrongPsw %>
+        </div>
+        <div class="wrap">
+          <button type="submit">Authenticate</button>
+        </div>
+      </form>
+      <p>
+        Not registered?
+        <a id="createAccountLink" href="#" style="text-decoration: none">
+          Create an account
+        </a>
+      </p>
+    </div>
+    <script>
+      document
+        .getElementById("createAccountLink")
+        .addEventListener("click", (event) => {
+          window.location.href = "/register";
+        });
+    </script>
+  </body>
+</html>
