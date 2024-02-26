@@ -9,7 +9,7 @@ A one-feature project to learn conditional responses in web frameworks routing a
 * nodemon
 * pg
 
-## What i have learn : 
+## What I have learned : 
 * First approach of route parameter handling by passing user info inside the URL
 * Dynamically inserting data into a database while implementing error-handling logic to manage insertion errors or conflicts
 * Retrieving data that isn't directly accessible from a database
